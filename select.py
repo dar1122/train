@@ -4,18 +4,18 @@ import stations
 import json
 
 
-def se():
+def se(a,b,c):
     allstations = stations.a
 
     allstations_1 = {v:k for k,v in allstations.items()}
 
-    start = input("请输入始发站：")
+    start = a
     from_station = allstations.get(start)
 
-    end = input("请输入终点站：")
+    end = b
     to_station = allstations.get(end)
 
-    search_date = input("请输入日期，输入格式为YYYY-MM-DD：")
+    search_date = c
     date = search_date
 
 
@@ -62,9 +62,6 @@ def se():
         # 无座
         no_seat = data_list[26] or '--'
 
-        list = ('车次:{}\n出发站:{}\n目的地:{}\n出发时间:{}\n到达时间:{}\n消耗时间:{}\n座位情况：\n 一等座：「{}」 \n二等座：「{}」\n软卧：「{}」\n硬卧：「{}」\n硬座：「{}」\n无座：「{}」\n\n'.format(train_no, from_station_name, to_station_name, start_time, arrive_time, time_fucked_up, first_class_seat,second_class_seat, soft_sleep, hard_sleep, hard_seat, no_seat))
+        list = ('车次:{}  出发站:{}  目的地:{}  出发时间:{}  到达时间:{}  消耗时间:{}  座位情况：   一等座：「{}」   二等座：「{}」  软卧：「{}」  硬卧：「{}」  硬座：「{}」  无座：「{}」\n'.format(train_no, from_station_name, to_station_name, start_time, arrive_time, time_fucked_up, first_class_seat,second_class_seat, soft_sleep, hard_sleep, hard_seat, no_seat))
         lists.append(list)
     return lists
-a = se()
-
-print(a)
