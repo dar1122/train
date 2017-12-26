@@ -34,14 +34,18 @@ def se(a,b,c):
 
         # 车次号码
         train_no = data_list[3]
+        while(len(train_no)<4):
+            train_no = train_no+" "
         # 出发站
         from_station_code = data_list[6]
         from_station_name = allstations_1.get(from_station_code)
-
+        while(len(from_station_name)<3):
+            from_station_name = from_station_name+"  "
         # 终点站
         to_station_code = data_list[7]
         to_station_name = allstations_1.get(to_station_code)
-
+        while(len(to_station_name)<3):
+            to_station_name = to_station_name+"    "
         # 出发时间
         start_time = data_list[8]
 
@@ -62,6 +66,6 @@ def se(a,b,c):
         # 无座
         no_seat = data_list[26] or '--'
 
-        list = ('车次:{}  出发站:{}  目的地:{}  出发时间:{}  到达时间:{}  消耗时间:{}  座位情况：   一等座：「{}」   二等座：「{}」  软卧：「{}」  硬卧：「{}」  硬座：「{}」  无座：「{}」\n'.format(train_no, from_station_name, to_station_name, start_time, arrive_time, time_fucked_up, first_class_seat,second_class_seat, soft_sleep, hard_sleep, hard_seat, no_seat))
+        list = ('{}    {}    {}   {}       {}      {}             「{}」   「{}」  「{}」  「{}」 「{}」「{}」\n'.format(train_no, from_station_name, to_station_name, start_time, arrive_time, time_fucked_up, first_class_seat,second_class_seat, soft_sleep, hard_sleep, hard_seat, no_seat))
         lists.append(list)
     return lists
