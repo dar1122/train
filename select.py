@@ -9,13 +9,13 @@ def se():
 
     allstations_1 = {v:k for k,v in allstations.items()}
 
-    start = '北京'
+    start = input("请输入始发站：")
     from_station = allstations.get(start)
 
-    end = '上海'
+    end = input("请输入终点站：")
     to_station = allstations.get(end)
 
-    search_date = '2017-12-26'
+    search_date = input("请输入日期，输入格式为YYYY-MM-DD：")
     date = search_date
 
 
